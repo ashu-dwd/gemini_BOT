@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat With AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .chat-container {
+        max-width: 800px;
+        height: 90vh;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-zinc-900">
+    <div
+      class="chat-container max-w-4xl mx-auto bg-white dark:bg-zinc-800 shadow-2xl rounded-xl overflow-hidden"
+    >
+      <div class="flex flex-col h-full">
+        <div
+          class="px-6 py-4 border-b dark:border-zinc-700 bg-gradient-to-r from-blue-500 to-purple-600"
+        >
+          <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold text-white flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 mr-3"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+                />
+              </svg>
+              AI Chatbot
+            </h2>
+            <div
+              class="bg-green-500 text-white text-sm px-3 py-1.5 rounded-full flex items-center"
+            >
+              <span
+                class="animate-pulse mr-2 h-2 w-2 bg-white rounded-full"
+              ></span>
+              Online
+            </div>
+          </div>
+        </div>
+        <div
+          id="chatDisplay"
+          class="flex-1 p-6 overflow-y-auto space-y-4 bg-gray-50 dark:bg-zinc-900"
+        >
+          <div class="flex justify-end mb-4">
+            <div
+              class="bg-blue-500 text-white max-w-lg rounded-xl px-4 py-2.5 text-base shadow-md"
+            >
+              Hello! How can I assist you today?
+            </div>
+          </div>
+          <div class="flex justify-start mb-4">
+            <div
+              class="bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-white max-w-lg rounded-xl px-4 py-2.5 text-base shadow-md"
+            >
+              Hi there! I'm looking for a powerful chatbot interface.
+            </div>
+          </div>
+        </div>
+        <form action="/" method="post">
+          <div
+            class="px-6 py-4 border-t dark:border-zinc-700 bg-white dark:bg-zinc-800"
+          >
+            <div class="flex gap-3">
+              <input
+                placeholder="Type your message..."
+                class="flex-1 p-3 border dark:border-zinc-600 rounded-xl dark:bg-zinc-700 dark:text-white text-base focus:ring-2 focus:ring-blue-500 transition duration-300"
+                id="chatInput"
+                name="chat"
+                type="text"
+              />
+              <button
+                class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 ease-in-out text-base flex items-center justify-center space-x-2 hover:shadow-lg"
+                id="sendButton"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                  />
+                </svg>
+                <span>Send</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
