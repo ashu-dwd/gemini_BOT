@@ -1,6 +1,6 @@
 const express = require("express");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-require('dotenv').config();
+require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -15,8 +15,8 @@ app.set("views", "./views"); // Ensure your EJS files are in the 'views' folder
 // Validate API key
 const apiKey = process.env.API_KEY;
 if (!apiKey) {
-    console.error("API_KEY is not set in environment variables");
-    process.exit(1);
+  console.error("API_KEY is not set in environment variables");
+  process.exit(1);
 }
 
 // Serve static files from the 'public' folder (for CSS, JS, etc.)
@@ -44,12 +44,12 @@ app.post("/", async (req, res) => {
 
     // Generate AI response based on user input
     const result = await model.generateContent({
-        contents: [{ role: "user", parts: [{ text: chat }]}],
+      contents: [{ role: "user", parts: [{ text: chat }] }],
     });
 
     const response = result.response.text();
     console.log("AI Response:", response);
-    
+
     res.json({ response: response });
   } catch (error) {
     console.error("Error generating content:", error);
