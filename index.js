@@ -44,7 +44,16 @@ app.post("/", async (req, res) => {
 
     // Generate AI response based on user input
     const result = await model.generateContent({
-      contents: [{ role: "user", parts: [{ text: chat }] }],
+      contents: [
+        {
+          role: "user",
+          parts: [
+            {
+              text: `${chat} `,
+            },
+          ],
+        },
+      ],
     });
 
     const response = result.response.text();
